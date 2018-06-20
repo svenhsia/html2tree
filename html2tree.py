@@ -298,7 +298,7 @@ class HTMLTree(object):
         parser = HTMLTreeParser()
         html_text = re.sub(r'< +', '<', html_text)
         html_text = re.sub(r'\\/', '/', html_text)
-        html_text = re.sub(r'\\"', '/', html_text)
+        html_text = re.sub(r'\\"', '"', html_text)
         parser.feed(html_text)
         parser.close()
         tree = HTMLTree()
