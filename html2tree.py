@@ -134,7 +134,7 @@ class TagNode(HTMLNode):
         """
         if self.tag in tags_delete:
             return None
-        elif self.attrs.get('id', set()) | self.attrs.get('class', set()) & set(attrs_delete):
+        elif (self.attrs.get('id', set()) | self.attrs.get('class', set())) & set(attrs_delete):
             return None
         self.children = [c.clean(tags_delete, attrs_delete)
                          for c in self.children]
